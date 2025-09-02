@@ -1,2 +1,3 @@
-# flask-calc
-to test how to deploy py app
+# Flask Calculator App
+
+This repo hosts a Flask demo with Postgres-backed history. More soon.
