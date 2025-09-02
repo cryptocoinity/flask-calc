@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Calc</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>🧮 Simple Calc</h1>
+    <nav>
+      <a href="{{ url_for('home') }}">Calculator</a>
+      <a href="{{ url_for('history') }}">History</a>
+    </nav>
+  </header>
+  <main>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash">
+          {% for m in messages %}<p>{{ m }}</p>{% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+  <footer>
+    <small>Flask + PostgreSQL demo</small>
+  </footer>
+</body>
+</html>

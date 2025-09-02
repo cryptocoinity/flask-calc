@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+  <form action="{{ url_for('calculate') }}" method="post" class="card">
+    <label>Expression (e.g. 12/3 + 2*(5-1))</label>
+    <input type="text" name="expression" placeholder="2+2" required>
+    <button type="submit">Calculate & Save</button>
+  </form>
+  <p>Or test quickly: <code>/api/calc?expr=2*3+4</code></p>
+{% endblock %}
